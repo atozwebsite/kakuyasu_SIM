@@ -902,12 +902,13 @@
     <button class="nav-btn active" onclick="showSection('plans')">プラン一覧</button>
     <button class="nav-btn" onclick="showSection('compare')">比較表</button>
     <button class="nav-btn" onclick="showSection('quiz')">診断する</button>
+    <a class="nav-btn" href="iphone-trade-in.html" style="text-decoration:none;">📱 iPhone下取り比較</a>
   </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-badge fade-up">📡 2025年最新情報に更新済み</div>
+  <div class="hero-badge fade-up">📡 2025年9月最新情報に更新済み</div>
   <h1 class="fade-up delay-1">あなたにぴったりの<br><span>スマホプラン</span>が見つかる</h1>
   <p class="fade-up delay-2">MNO・MVNOの主要プランを一括比較。端末・SIM構成を含む8つの質問に答えるだけで、シングル／デュアルSIM両対応の最適プランを自動提案します。</p>
   <div class="fade-up delay-3">
@@ -994,6 +995,18 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
       無料でプラン診断してみる
     </button>
+  </div>
+
+  <!-- iPhone下取り誘導バナー -->
+  <div style="background:linear-gradient(135deg,rgba(249,168,79,0.1),rgba(248,113,113,0.07)); border:1px solid rgba(249,168,79,0.3); border-radius:var(--radius); padding:22px 24px; margin-top:20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px;">
+    <div>
+      <div style="font-size:11px; color:var(--accent3); font-weight:600; letter-spacing:0.08em; margin-bottom:4px; text-transform:uppercase;">新コンテンツ</div>
+      <div style="font-size:15px; font-weight:700; margin-bottom:4px;">📱 iPhone 18をお得に買う方法</div>
+      <div style="font-size:13px; color:var(--text-secondary);">ドコモ・au・SoftBank・楽天・Appleの下取りプログラムを徹底比較</div>
+    </div>
+    <a href="iphone-trade-in.html" style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,var(--accent3),#e07b20); color:#fff; padding:11px 22px; border-radius:8px; font-size:13px; font-weight:500; text-decoration:none; white-space:nowrap; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">
+      下取り比較を見る ↗
+    </a>
   </div>
 
 </div>
@@ -1742,7 +1755,7 @@
         </thead>
         <tbody>
           <tr>
-            <td><div class="table-carrier"><div class="table-logo" style="background:rgba(220,53,69,0.15);color:#f87171;">d</div><div><strong>eximo</strong><br><span style="color:var(--text-secondary);font-size:11px;">NTTドコモ</span></div></div></td>
+            <td><div class="table-carrier"><div class="table-logo" style="background:rgba(220,53,69,0.15);color:#f87171;">d</div><div><strong>ドコモMAX</strong><br><span style="font-size:11px;color:var(--text-muted);">（eximo後継）</span><br><span style="color:var(--text-secondary);font-size:11px;">NTTドコモ</span></div></div></td>
             <td class="price-cell">4,565円〜</td>
             <td>無制限</td>
             <td><span class="network-tag net-docomo">ドコモ</span></td>
@@ -1893,6 +1906,7 @@
   <p style="margin-top: 6px;">
     <a href="#" onclick="showPrivacyPolicy(); return false;">プライバシーポリシー</a> ・
     <a href="#" onclick="showDisclaimer(); return false;">免責事項</a> ・
+    <a href="iphone-trade-in.html">iPhone下取り比較</a> ・
     <a href="mailto:info@kakuyasu-sim.jp">お問い合わせ</a>
   </p>
   <p style="margin-top: 8px; font-size: 11px;">© 2025 格安SIM比較ナビ（kakuyasu-sim.jp）. All Rights Reserved.</p>
@@ -1916,7 +1930,7 @@
 // ─── AFFILIATE LINKS（ASPリンクをここで一元管理） ───
 // ※ 各ASPから取得したアフィリエイトURLに差し替えてください
 const affiliateLinks = {
-  eximo:       'https://www.nttdocomo.co.jp/service/eximo/',          // ドコモ公式 → ASPリンクに差替
+  docomo_max:  'https://www.nttdocomo.co.jp/', // ドコモMAX公式          // ドコモ公式 → ASPリンクに差替
   au_unlimited:'https://www.au.com/mobile/plan/unlimited-smart/',     // au公式 → ASPリンクに差替
   sb_meritari: 'https://www.softbank.jp/mobile/price_plan/meritari/', // SB公式 → ASPリンクに差替
   ahamo:       'https://ahamo.com/',                                   // → ASPリンクに差替
@@ -2201,11 +2215,11 @@ function resetQuiz() {
 // ─── PLANS DATABASE（全19プラン） ───
 const plansDB = [
   // ── 大手MNO ──
-  { id:'eximo',       name:'eximo',                  carrier:'NTTドコモ',         price:'4,565円〜/月', priceNum:4565, data:'無制限',      type:'mno',  esim:true,  rakuten:false,
+  { id:'docomo_max',  name:'ドコモMAX',                  carrier:'NTTドコモ',         price:'5,698円〜/月', priceNum:5698, data:'無制限',      type:'mno',  esim:true,  rakuten:false,
     tags:['unlimited','heavy','high'],       priority:['speed','support','data'],
     family:'docomo_family', familyDiscount:'みんなドコモ割：最大1,100円/月割引（3回線〜）',
-    promo:'dカード支払い割：110円/月引き。初月無料キャンペーンあり（時期により変動）',
-    why:'ドコモ最高品質の回線・全国店舗サポート。ヘビーユーザー・家族向け最強プラン。' },
+    promo:'2025年6月5日よりeximo後継プラン。DAZN等エンタメ特典込み。dカード支払い割・長期利用割（2025年10月〜）あり',
+    why:'ドコモ最上位プラン（eximo後継）。DAZN等エンタメ無料特典付き。eximoより約1,133円高いが特典重視のヘビーユーザー向け。' },
   { id:'au_unlimited',name:'Unlimited Smart',         carrier:'au（KDDI）',        price:'4,928円〜/月', priceNum:4928, data:'無制限',      type:'mno',  esim:true,  rakuten:false,
     tags:['unlimited','heavy','high'],       priority:['speed','support','data'],
     family:'au_family', familyDiscount:'家族割プラス：最大1,100円/月割引（5回線以上）',
@@ -2217,11 +2231,11 @@ const plansDB = [
     promo:'おうち割光セット：最大1,100円/月割引。Yahoo!プレミアム付き',
     why:'Yahoo!プレミアム・PayPayポイント付与。SoftBank最上位プランで高品質回線。' },
   // ── サブブランド ──
-  { id:'ahamo',       name:'ahamo',                  carrier:'NTTドコモ系',       price:'2,970円/月',   priceNum:2970, data:'20GB',        type:'sub',  esim:true,  rakuten:false,
+  { id:'ahamo',       name:'ahamo',                  carrier:'NTTドコモ系',       price:'2,970円/月',   priceNum:2970, data:'30GB',        type:'sub',  esim:true,  rakuten:false,
     tags:['mid','low','none','light'],       priority:['speed','cost','data'],
     family:'ahamo_family', familyDiscount:'ahamo大盛り（+1,980円で100GB）で家族でデータシェア可',
     promo:'MNP乗り換えで最大13,000ポイント還元（時期により変動）',
-    why:'ドコモ回線20GB・5分かけ放題込み。コスパと品質のバランスが最高峰。' },
+    why:'ドコモ回線30GB・5分かけ放題込みで月2,970円。2025年にデータ増量済み。コスパと品質のバランスが最高峰。' },
   { id:'povo',        name:'povo2.0',                 carrier:'au系',              price:'0円〜/月',     priceNum:0,    data:'トッピング制', type:'sub',  esim:true,  rakuten:false,
     tags:['light','ultra_low','none'],       priority:['cost'],
     family:'none', familyDiscount:'家族割なし（個人向けプラン）',
@@ -2242,22 +2256,22 @@ const plansDB = [
     family:'rakuten_family', familyDiscount:'最強家族プログラム：3回線まで110ポイント/月還元',
     promo:'キャンペーンで最大14,000ポイント還元（時期により大幅変動）。0〜3GBは1,078円の段階制',
     why:'Rakuten Linkで国内通話完全無料。無制限プランが業界最安クラス。楽天エリア内なら最強コスパ。' },
-  { id:'uq',          name:'コミコミプラン',          carrier:'UQモバイル',        price:'3,278円/月',   priceNum:3278, data:'20GB',        type:'sub',  esim:true,  rakuten:false,
+  { id:'uq',          name:'トクトクプラン2/コミコミプランバリュー', carrier:'UQモバイル', price:'2,948円〜/月',  priceNum:2948, data:'5〜35GB',        type:'sub',  esim:true,  rakuten:false,
     tags:['mid','low','heavy','light'],      priority:['support','speed'],
     family:'uq_family', familyDiscount:'家族セット割：2回線目〜550円/月割引',
-    promo:'au PAYカード支払い割：187円/月引き。auひかりセット割あり',
-    why:'10分かけ放題込み。au回線品質＋店舗サポートで安心。家族割でさらにお得。' },
-  { id:'ymobile',     name:'シンプル2 S/M/L',        carrier:'Y!mobile',          price:'2,178円〜/月', priceNum:2178, data:'4〜30GB',     type:'sub',  esim:true,  rakuten:false,
+    promo:'自宅セット割：1,100円/月引き。au PAYカード支払い割：220円/月引き。2025年6月プラン刷新・11月料金改定済み',
+    why:'2025年6月刷新の新プラン。トクトクプラン2（5〜30GB従量）かコミコミプランバリュー（35GB・かけ放題込み）を選択。au回線で安定。' },
+  { id:'ymobile',     name:'シンプル3 S/M/L',        carrier:'Y!mobile',          price:'3,278円〜/月', priceNum:3278, data:'5〜35GB',     type:'sub',  esim:true,  rakuten:false,
     tags:['mid','low'],                      priority:['support'],
     family:'ymobile_family', familyDiscount:'家族割引サービス：2回線目以降1,188円/月割引（最大9回線）',
-    promo:'おうち割光セット：最大1,100円/月割引。PayPayポイント最大20,000円相当還元',
-    why:'全国店舗でのサポート充実。家族割適用で月990円〜も可能。PayPay連携でポイントも。' },
+    promo:'おうち割光セット(A)：1,650円/月引き。PayPayカード割：330円/月引き。2026年6月プラン改定済み',
+    why:'2026年6月改定の新プラン（シンプル3）。おうち割+PayPayカード割で実質1,298円〜。全国店舗サポート充実。' },
   // ── MVNO ──
-  { id:'iijmio',      name:'ギガプラン',              carrier:'IIJmio',            price:'850円〜/月',   priceNum:850,  data:'2〜50GB',     type:'mvno', esim:true,  rakuten:false,
+  { id:'iijmio',      name:'ギガプラン',              carrier:'IIJmio',            price:'950円〜/月',   priceNum:950,  data:'5〜55GB',     type:'mvno', esim:true,  rakuten:false,
     tags:['light','mid','ultra_low','low'],  priority:['cost'],
     family:'iijmio_family', familyDiscount:'複数枚割引：2枚目以降140円/月割引',
-    promo:'MNP乗り換えで最大13,000円相当キャッシュバック（時期により変動）。端末セット割引あり',
-    why:'格安MVNOで最安水準。ドコモ・au回線選択可。eSIM対応。複数枚割引で家族利用も◎。' },
+    promo:'2025年3月・2026年3月と値下げ・増量を実施。5GB:950円、15GB:1,600円、25GB:2,000円。MNP乗り換えキャッシュバックあり',
+    why:'2025〜2026年に連続値下げ・増量を実施。5GBが950円と業界最安クラス。ドコモ・au回線選択可。eSIM対応。' },
   { id:'nihontsushin',name:'合理的20GBプラン',        carrier:'日本通信SIM',       price:'2,178円/月',   priceNum:2178, data:'20GB',        type:'mvno', esim:true,  rakuten:false,
     tags:['mid','low','none','light'],       priority:['cost'],
     family:'none', familyDiscount:'家族向けは「合理的みんなのプラン」が別途あり',
@@ -2281,7 +2295,7 @@ const plansDB = [
   { id:'ocnmobile',   name:'OCNモバイルONE',          carrier:'OCNモバイルONE',    price:'550円〜/月',   priceNum:550,  data:'500MB〜10GB', type:'mvno', esim:false, rakuten:false,
     tags:['light','ultra_low','low'],        priority:['cost'],
     family:'ocn_family', familyDiscount:'家族まとめ割：2回線目以降110円/月割引',
-    promo:'OCNひかりとのセット割引あり。NTTコミュニケーションズ系で安定',
+    promo:'NTTドコモ系列移行に伴いサービス内容が変動中。最新情報は公式サイトでご確認ください',
     why:'NTTグループのMVNO。ドコモ回線で安定。格安で信頼性の高い老舗MVNO。' },
   { id:'bicsim',      name:'BIC SIM',                 carrier:'IIJmio（BIC）',     price:'850円〜/月',   priceNum:850,  data:'2〜50GB',     type:'mvno', esim:true,  rakuten:false,
     tags:['light','mid','ultra_low','low'],  priority:['cost'],
